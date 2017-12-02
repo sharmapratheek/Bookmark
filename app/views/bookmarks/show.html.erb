@@ -1,0 +1,8 @@
+<h1>Show page</h1>
+
+<p>Bookmark Name: <%= @bookmark.Bookmarkname %></p>
+<p>Link: <%= @bookmark.link %></p>
+<tr>
+	<th><%= link_to "Edit",edit_bookmark_path(@bookmark) %></th>
+	<th><%= link_to "Back",bookmarks_path %></th>
+</tr>
