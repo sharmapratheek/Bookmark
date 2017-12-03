@@ -10,11 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202175309) do
+ActiveRecord::Schema.define(version: 20171203061010) do
+
+  create_table "bookmark_links", force: :cascade do |t|
+    t.integer "bookmark_id"
+    t.integer "link_id"
+  end
 
   create_table "bookmarks", force: :cascade do |t|
     t.string "Bookmarkname"
     t.text "link"
+    t.integer "user_id"
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.string "link"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end
