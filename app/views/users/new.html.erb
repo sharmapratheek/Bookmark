@@ -1,0 +1,33 @@
+<h1>Sign up for the application </h1>
+
+
+<% if @user.errors.any? %>
+	<h2>The following error prevented the todo from being saved</h2>
+			<ul>
+				<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+<% end %>
+
+<%= form_for @user do |f|%>
+	<p>
+		<%= f.label :name , "User name"%><br>
+		<%= f.text_field :name%>
+	</p>
+	<p>
+		<%= f.label :email%><br>
+		<%= f.email_field :email %>
+	</p>
+	<p>
+		<%= f.label :password%><br>
+		<%= f.password_field :password %>
+	</p>
+	<p>
+		<%= f.label :password_confirmation,"Confirm password "%><br>
+		<%= f.password_field :password_confirmation %>
+	</p>
+	<p><br>
+		<%= f.submit "Create my Account"%>
+	</p>
+<% end %>

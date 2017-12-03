@@ -3,5 +3,5 @@ class Link < ApplicationRecord
 	validates_uniqueness_of :link 
 
 	has_many :bookmark_links
-	has_many :bookmarks, through: :bookmark_links
+	has_many :bookmark, through: :bookmark_links
 end
